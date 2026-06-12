@@ -1,0 +1,3 @@
+<h2>Personal Finance Management Dashboard</h2>
+<p>In today's fast-paced world, individuals struggle to track their income, expenses, and investments across various bank accounts, credit cards, and investment platforms. This lack of a unified view leads to poor financial decisions, missed savings opportunities, and difficulty in budgeting. The PFM Dashboard will solve this by aggregating a user's financial data into a single, intuitive interface. This helps users understand their spending habits, monitor their net worth, and create effective budgets, thereby promoting financial wellness. For the industry, such platforms drive user engagement and provide valuable (anonymized) data for developing other financial products</p>
+
