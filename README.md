@@ -60,42 +60,5 @@ N:-Nodejs =>execution of JavaScript on the server side /
 
 <h2>Project Backend setup using Node.js  </h2>
 
-<pre> 
-For Project set-up read: ([Node set-up mdn doc](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/development_environment))
 
- - initiate node project: 
- run command : npm init -y (initiate ->package.json file track dependency)
 
- - Install some package Using command: 
- * npm i express  (for Node module)
- * npm i mongoose (for Mongodatabase)
- * npm i multer   (for middileware)
- * npm dotenv     (For .env file configuration)
-
- - For start backend express server:
- * npm start
-</pre>
-
-<p2></p2>
-
-<p2>Project frontend Set-up</p2>
-
-<pre>
-For Project set-up read:([Getting started with react](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_getting_started))
-
-- create folder :
-* npm create vite@latest pfm-UI -- --template react
-
--change directory
-* cd pfm-UI
-
-- install node package manager
-* npm install
-
-- for start node server run command:
-* npm run dev
-</pre>
-
-<h2></h2>
-
-<h2>Design the MongoDB data models </h2>
