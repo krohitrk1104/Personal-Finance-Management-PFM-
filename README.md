@@ -59,22 +59,21 @@ N:-Nodejs =>execution of JavaScript on the server side /
 <H1>Week-01</H1>
 
 <h2>Project Backend setup using Node.js  </h2>
+<p>
+For project set-up read : [Node set-up mdn doc](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/development_environment)
 <pre>
-For Project set-up read: ([Node set-up mdn doc](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/development_environment))
+- initiate node project:
+run command : npm init -y (initiate ->package.json file track dependency)
 
- - initiate node project: 
- run command : npm init -y (initiate ->package.json file track dependency)
+- Install some package using command: 
+ npm i express  (for Node module)
+ npm i mongoose (for Mongodatabase)
+ npm i multer   (for middileware)
+ npm dotenv     (For .env file configuration)
 
- - Install some package Using command: 
- * npm i express  (for Node module)
- * npm i mongoose (for Mongodatabase)
- * npm i multer   (for middileware)
- * npm dotenv     (For .env file configuration)
-
- - For start backend express server:
- * npm start
-</pre>
-
+- Starts server:
+ npm start
+</pre></p>
 <h2>Project frontend Set-up </h2>
 
 <pre>
