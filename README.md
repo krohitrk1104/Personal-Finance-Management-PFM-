@@ -55,6 +55,3 @@ N:-Nodejs =>execution of JavaScript on the server side /
    API development.</pre>
 
 <h2>Project Backend setup using Node.js  </h2>
-
-
-
