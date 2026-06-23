@@ -8,7 +8,7 @@ const { Schema } = mongoose;//Also, const Schema =mongoose.schema
 const businessProfileSchema=new Schema(
     {
         businessName:{
-            tyoe:string,
+            type:String,
             trim:true,
             default:null,
         },
@@ -18,7 +18,7 @@ const businessProfileSchema=new Schema(
             default:null
         },
         businessType:{
-            type:string,
+            type:String,
             enum:['sole_proprietor','partnership','pvt_ltd','llp','other'],
             default:null,
         },
@@ -115,7 +115,7 @@ const userSchema= new Schema (
         userType:{
             type:String,
             enum: ['business','salaried','student'],
-            required:true,
+            required:false,
         },
     //Only one of these will be populated based on userType
         businessProfile:{
@@ -138,7 +138,7 @@ const userSchema= new Schema (
 
         },
         plan:{
-            type:string,
+            type:String,
             enum:['free','pro','premium'],
             default: 'free'
         },
@@ -154,7 +154,6 @@ const userSchema= new Schema (
         
 });
 //for avoid duplicate account data into database inddex=>Primary key is email id.
-userSchema.index({ email: 1 });
 // create mongoose model
 const User =mongoose.model('User', userSchema);
 
