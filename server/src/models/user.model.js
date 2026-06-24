@@ -101,7 +101,7 @@ const userSchema= new Schema (
             lowercase: true,
             trim:true,
         },
-        Password:{
+        password:{
             type:String,
             required:[true, 'Password is required'],
             select:false,//Hidden by default 
@@ -115,7 +115,7 @@ const userSchema= new Schema (
         userType:{
             type:String,
             enum: ['business','salaried','student'],
-            required:false,
+            required:true,
         },
     //Only one of these will be populated based on userType
         businessProfile:{
