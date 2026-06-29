@@ -1,3 +1,7 @@
 server/.env
 server/node_modules/
 server/steps.txt
+client/Pfm-UI/.env
+client/Pfm-UI/.env.local
+client/Pfm-UI/node_modules/
+client/Pfm-UI/dist/
