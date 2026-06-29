@@ -1,106 +1,221 @@
-<h2>Personal Finance Management Dashboard</h2>
-<p>In today's fast-paced world, individuals struggle to track their income, expenses, and investments across various bank accounts, credit cards, and investment platforms. This lack of a unified view leads to poor financial decisions, missed savings opportunities, and difficulty in budgeting. The PFM Dashboard will solve this by aggregating a user's financial data into a single, intuitive interface. This helps users understand their spending habits, monitor their net worth, and create effective budgets, thereby promoting financial wellness. For the industry, such platforms drive user engagement and provide valuable (anonymized) data for developing other financial products</p>
+# Personal Finance Management Dashboard
 
-<h3>Why Personal finance management Dashboard is Importand?</h3>
+FinanceHub is a MERN personal finance management dashboard for tracking income, expenses, budgets, linked bank accounts, net worth, savings goals, and occupation-specific financial insights.
 
-<p>This is PFM dashboard gives a comprehensive acess of tools that help user to track their <b> personal expense </b>, total saving in all account that they have, <b>Future goal</b> Like: to buy home or bike or plan trip, these all can manage and track eligible at one sigle platform. Also User want to <b>take a decision to change career path they can take less risk in terms of finance that is possible and calculated through this dashboard and platform</b>. one more thing about anything if user want direct know through communication that for eg."how much month required to acheive our 1st goal" using AI. We provide integrated ai-model/agent, this also help them to low risk taking consultant in terms of finance, Also track business owner account to identify user/client and add that in their revenue category and similarly amount that pay to the salary to employees and other expenses can customize name of transaction in a group ,that help a lot.</p>
+The app supports three main user categories:
 
-<ul>
-* Provides a comprehensive Personal Finance Management (PFM) dashboard for managing and tracking financial activities in one place.
+- `salaried` users who need salary, bills, savings, and investment tracking.
+- `business` users who need revenue, expense, GST, vendor/client, and current-account tracking.
+- `student` users who need allowance, family support, simple budgets, and education goals.
 
-* Tracks **personal expenses** and gives users a clear overview of their spending patterns.
+## Tech Stack
 
-* Displays **total savings** across all linked bank accounts and financial assets.
+- **MongoDB**: database for users, accounts, transactions, goals, clients, and transaction groups.
+- **Express.js**: REST API server.
+- **React**: frontend UI.
+- **Node.js**: server runtime.
+- **Tailwind CSS**: frontend styling.
+- **Vite**: frontend build tool.
 
-* Enables users to create, manage, and monitor **future financial goals**, such as:
+## Project Structure
 
-  * Buying a home
-  * Purchasing a bike or car
-  * Planning a trip or vacation
-  * Other customized financial objectives
+```txt
+PFM(P-01)/
+  client/
+    Pfm-UI/
+      src/
+        api/
+        components/
+        context/
+        data/
+        pages/
+        routes/
+        utils/
+  server/
+    src/
+      controllers/
+      db/
+      middlewares/
+      models/
+      routes/
+      services/
+      utils/
+```
 
-* Offers goal-tracking insights, including progress status and estimated timelines to achieve financial targets.
+## Current Status
 
-* Helps users evaluate **career change decisions** by analyzing their financial situation and calculating potential financial risks before making a transition.
+Frontend pages completed first:
 
-* Integrates an **AI-powered assistant/agent** that allows users to interact through natural language and receive instant financial insights.
+- Landing page
+- Login page
+- Registration page
+- Profile setup page
+- Connect bank page
+- Dashboard page
+- Placeholder routes for budgets, transactions, analytics, and settings
 
-* Supports AI-based queries such as:
+Backend currently connected:
 
-  * "How many months will it take to achieve my first goal?"
-  * "Can I afford a career switch this year?"
-  * "How much should I save monthly to reach my target?"
+- `POST /api/auth/register`
+- `POST /api/auth/login`
+- MongoDB connection
+- JWT generation
+- Mongoose models for users, accounts, transactions, transaction groups, goals, and clients
 
-* Acts as a financial risk assessment and decision-support tool, helping users make informed choices with lower financial risk.
+Backend still required:
 
-* Supports **business account tracking** for business owners and entrepreneurs.
+- Auth middleware implementation
+- Profile read/update API
+- Account CRUD API
+- Plaid bank-link API
+- Transaction sync/import API
+- Dashboard summary API
+- Budget API
+- Goal API
+- Analytics API
 
-* Identifies customers/clients and automatically categorizes incoming payments under revenue streams.
+## Environment Variables
 
-* Tracks salary payments to employees and monitors operational expenses.
+Create `server/.env`:
 
-* Allows users to **customize transaction names and group categories**, making financial records more organized and easier to analyze.
+```env
+PORT=4000
+MONGODB_URL=mongodb+srv://<username>:<password>@<cluster-url>/<database-name>
+JWT_SECRET=replace_with_long_random_secret
+JWT_EXPIRES_IN=7d
 
-* Provides a unified platform for personal finance, goal planning, AI-driven financial guidance, and business expense management.
+# Frontend origin for CORS
+CLIENT_URL=http://127.0.0.1:5173
 
-</ul>
+# Plaid sandbox configuration
+PLAID_CLIENT_ID=your_plaid_client_id
+PLAID_SECRET=your_plaid_sandbox_secret
+PLAID_ENV=sandbox
+PLAID_PRODUCTS=transactions
+PLAID_COUNTRY_CODES=US
+PLAID_REDIRECT_URI=
 
-<h2></h2>
+# Optional email / OTP configuration
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_gmail_app_password
+```
 
-<h2>Tech stack we will Using through out the development of the project</h2>
-<pre>  <b>MERN</b>
-M:- Mongodb=> For Non SQL database 
-E:- Express => Using express server for request and response at different api
-R:- React => For Frontend development.
-N:-Nodejs =>execution of JavaScript on the server side /
-   Handling HTTP
-   API development.</pre>
+Create `client/Pfm-UI/.env`:
 
-<H1>Week-01</H1>
+```env
+VITE_API_URL=http://localhost:4000/api
+VITE_APP_NAME=FinanceHub
+```
+## Install and Run
 
-<h2>Project Backend setup using Node.js  </h2>
-<p>
-For project set-up read : [Node set-up mdn doc](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/development_environment)
-<pre>
-- initiate node project:
-run command : npm init -y (initiate ->package.json file track dependency)
+Install backend dependencies:
 
-- Install some package using command: 
- npm i express  (for Node module)
- npm i mongoose (for Mongodatabase)
- npm i multer   (for middileware)
- npm dotenv     (For .env file configuration)
+```bash
+cd server
+npm init -y
+```
 
-- Starts server:
- npm start
-</pre></p>
-<h2>Project frontend Set-up </h2>
+Start backend:
 
-<pre>
-For Project set-up read:([Getting started with react](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_getting_started))
+```bash
+node server.js
+```
 
-- create folder :
-* npm create vite@latest pfm-UI -- --template react
+Install frontend dependencies:
 
--change directory
-* cd pfm-UI
+```bash
+cd client/Pfm-UI
+npm install
+```
 
-- install node package manager
-* npm install
+Start frontend:
 
-- for start node server run command:
-* npm run dev
+```bash
+npm run dev
+```
 
-</pre>
-<h2></h2>
+Frontend default URL:
 
-<h2>Design the MongoDB data models</h2>
+```txt
+http://127.0.0.1:5173
+```
 
-<pre>
- - User model
- - account model
- - transaction model
- - transaction group
- - goal model
- - client model
-</pre>
+Backend default URL:
+
+```txt
+http://localhost:4000
+```
+
+## API Plan Needed For Full Functionality
+
+### Auth
+
+- `POST /api/auth/register`
+- `POST /api/auth/login`
+- `GET /api/auth/me`
+- `POST /api/auth/logout`
+
+### Profile
+
+- `GET /api/users/me`
+- `PATCH /api/users/me`
+- Store `phone`, `currency`, `location`, `dateOfBirth`, occupation-specific profile fields, financial goals, and risk comfort.
+
+### Plaid / Bank Connection
+
+- `POST /api/plaid/create-link-token`
+- `POST /api/plaid/exchange-public-token`
+- `GET /api/accounts`
+- `POST /api/accounts/sync`
+- Store Plaid `item_id` and encrypted `access_token`.
+- Never expose Plaid secrets to the frontend.
+
+### Transactions
+
+- `GET /api/transactions`
+- `POST /api/transactions`
+- `PATCH /api/transactions/:id`
+- `DELETE /api/transactions/:id`
+- Support filters by account, category, date range, transaction type, and status.
+
+### Dashboard
+
+- `GET /api/dashboard/summary`
+- Return total balance, monthly income, monthly spending, savings rate, account balances, recent transactions, spending by category, monthly summary chart data, budget progress, goal progress, and AI insights.
+
+### Budgets and Goals
+
+- `GET /api/budgets`
+- `POST /api/budgets`
+- `PATCH /api/budgets/:id`
+- `DELETE /api/budgets/:id`
+- `GET /api/goals`
+- `POST /api/goals`
+- `PATCH /api/goals/:id`
+- `DELETE /api/goals/:id`
+
+## Dashboard Chart Status
+
+The current frontend dashboard uses mock data and lightweight CSS/SVG charts. It does **not** yet use Recharts, and there is no backend summary endpoint yet.
+
+Recommended next step:
+
+- Add `recharts` to the frontend.
+- Create `GET /api/dashboard/summary` on the backend.
+- Replace mock dashboard data with API data.
+- Use Recharts for:
+  - Pie chart: spending breakdown by category.
+  - Bar chart: monthly income vs spending.
+  - Line chart: net worth trend.
+
+## Connected Accounts Status
+
+The current UI displays a static/mock list of connected accounts and balances. It is not yet functionally connected to the backend.
+
+To make it functional:
+
+- Add account routes and controllers.
+- Save linked accounts in the `Account` model.
+- Add Plaid link-token and token-exchange endpoints.
+- Fetch real accounts with `GET /api/accounts`.
+- Display balances from MongoDB/Plaid sync instead of mock frontend data.
